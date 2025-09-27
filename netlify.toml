@@ -8,7 +8,7 @@
 
 [build.environment]
   NODE_VERSION = "20"
-  PYTHON_VERSION = "3.12"
+  PYTHON_VERSION = "3.8.2"
 
 # Headers for security and performance
 [[headers]]

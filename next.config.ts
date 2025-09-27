@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   images: {
     domains: ['raw.githubusercontent.com', 'github.com', 'avatars.githubusercontent.com'],
-    unoptimized: true, // For Netlify compatibility
+    // Removed unoptimized for better performance with local images
   },
   distDir: 'dist',
 };

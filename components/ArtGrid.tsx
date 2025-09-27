@@ -37,7 +37,7 @@ export default function ArtGrid({ artPieces }: ArtGridProps) {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {artPieces.map((piece) => (
+        {artPieces.map((piece, index) => (
           <div
             key={piece.id}
             className="group cursor-pointer"
@@ -48,13 +48,17 @@ export default function ArtGrid({ artPieces }: ArtGridProps) {
                 src={piece.src}
                 alt={piece.alt}
                 fill
-                className="object-cover z-10"
+                className="object-cover z-10 transition-opacity duration-300"
                 style={{
                   filter: 'none',
                   WebkitFilter: 'none',
                   imageRendering: 'auto'
                 }}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority={index < 6} // Prioritize first 6 images for LCP
+                loading={index < 6 ? 'eager' : 'lazy'} // Eager load first 6, lazy load rest
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 onError={() => console.error('Image failed to load:', piece.src)}
               />
             </div>

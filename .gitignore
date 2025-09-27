@@ -165,5 +165,5 @@ pnpm-debug.log*
 .vscode/launch.json
 
 # Generated documentation
-*.pdf
+
 *.docx

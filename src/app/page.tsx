@@ -112,7 +112,7 @@ export default function Home() {
                 zIndex: 10
               }}
               style={{
-                filter: `hue-rotate(${(mousePosition.x / window.innerWidth) * 60 - 30}deg) saturate(${hoveredPiece === piece.id ? 2 : 1})`,
+                filter: `hue-rotate(${typeof window !== 'undefined' ? (mousePosition.x / window.innerWidth) * 60 - 30 : 0}deg) saturate(${hoveredPiece === piece.id ? 2 : 1})`,
                 transform: hoveredPiece === piece.id ? 'translateZ(20px)' : 'translateZ(0px)',
               }}
             >

@@ -250,7 +250,7 @@ or writing about AI engineering and software development best practices.
                   Get a detailed PDF version of my professional experience and qualifications.
                 </p>
                 <a
-                  href="/resume.pdf"
+                  href="/danielkliewer.pdf"
                   download
                   className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 transition-colors"
                 >

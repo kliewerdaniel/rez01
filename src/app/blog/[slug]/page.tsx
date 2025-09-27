@@ -28,7 +28,7 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
         tags: data.tags || [],
         content,
       };
-    } catch (fileError) {
+    } catch {
       // Blog post not found
       return null;
     }
@@ -177,7 +177,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {/* Article Content */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <div className="whitespace-pre-wrap text-gray-700 dark:text-gray-300 leading-relaxed">
-              {post.content}
+              {post.content.replace(/'/g, "'")}
             </div>
           </div>
         </article>

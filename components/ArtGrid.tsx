@@ -37,26 +37,25 @@ export default function ArtGrid({ artPieces }: ArtGridProps) {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {artPieces.map((piece, index) => (
+        {artPieces.map((piece) => (
           <div
             key={piece.id}
             className="group cursor-pointer"
             onClick={() => setSelectedPiece(piece)}
           >
             <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
-              <img
+              <Image
                 src={piece.src}
                 alt={piece.alt}
-                className="w-full h-full object-cover z-10 relative"
+                fill
+                className="object-cover z-10"
                 style={{
                   filter: 'none',
                   WebkitFilter: 'none',
                   imageRendering: 'auto'
                 }}
-                onError={(e) => {
-                  console.error('Image failed to load:', piece.src);
-                  e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23ff0000'/%3E%3Ctext x='200' y='200' text-anchor='middle' fill='white' font-size='20'%3EImage Error%3C/text%3E%3C/svg%3E";
-                }}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                onError={() => console.error('Image failed to load:', piece.src)}
               />
             </div>
           </div>

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import GlitchBackground from '../../components/GlitchBackground';
 import ArtGrid from '../../components/ArtGrid';
 
@@ -26,35 +26,13 @@ const roles = [
   'Data Annotation Specialist'
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
-};
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 100,
-      damping: 10,
-    },
-  },
-};
 
 export default function Home() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [showContent, setShowContent] = useState(false);
+
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredPiece, setHoveredPiece] = useState<string | null>(null);
 
@@ -85,13 +63,7 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentRoleIndex]);
 
-  // Show content after initial glitch animation
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowContent(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+
 
   // Mouse tracking for interactive effects
   useEffect(() => {

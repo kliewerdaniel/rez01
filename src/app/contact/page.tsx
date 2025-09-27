@@ -206,10 +206,10 @@ export default function ContactPage() {
                       For work inquiries and direct messages
                     </p>
                     <a
-                      href="mailto:daniel@example.com"
+                      href="mailto:danielkliewer@gmail.com"
                       className="text-sm text-indigo-600 hover:text-indigo-800 dark:text-indigo-400 dark:hover:text-indigo-300"
                     >
-                      daniel@example.com
+                      danielkliewer@gmail.com
                     </a>
                   </div>
                 </div>

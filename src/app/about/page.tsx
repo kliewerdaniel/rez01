@@ -199,12 +199,13 @@ export default function AboutPage() {
                   I build local-first AI prototypes, web systems, and developer tools that scale from single-machine research to production.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-                  My work spans the entire stack—from designing distributed systems and APIs to crafting intuitive user interfaces.
+                  
+My work spans the entire stack—from designing distributed systems and APIs to crafting intuitive user interfaces.
                   I'm particularly passionate about creating tools that make AI development more accessible and building systems that respect user privacy through local-first design principles.
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                  When I'm not coding, you can find me exploring the intersection of technology and art, contributing to open-source projects,
-                  or writing about AI engineering and software development best practices.
+When I'm not coding, you can find me exploring the intersection of technology and art, contributing to open-source projects,
+or writing about AI engineering and software development best practices.
                 </p>
               </div>
             </section>
